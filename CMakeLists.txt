@@ -16,6 +16,10 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
 add_executable(YHA
         main.cpp
+        CalendarWidget.cpp
+        CalendarWidget.h
+        MainWindow.cpp
+        MainWindow.h
 )
 
 target_link_libraries(YHA
