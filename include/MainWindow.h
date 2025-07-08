@@ -4,8 +4,11 @@
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "CalendarWidget.h"
 #include <QWidget>
+#include <QGroupBox>
+#include <QGridLayout>
+#include <QLabel>
+#include <QCalendarWidget>
 
 
 class MainWindow : public QWidget{
@@ -13,12 +16,13 @@ class MainWindow : public QWidget{
     public:
     MainWindow(QWidget * parent=Q_NULLPTR);
     private:
-    void createCalendar();
-    void reformatCalendarPage();
+    void createDateTime();
 
-    CalendarWidget *calendarGroupBox;
+    QGroupBox *dtGroupBox;
     QGridLayout *gridLayout;
     QCalendarWidget *calendar;
+    QTime *time;
+    QLabel *timeLabel;
 };
 
 
