@@ -4,25 +4,31 @@
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <QMainWindow>
 #include <QWidget>
 #include <QGroupBox>
 #include <QGridLayout>
 #include <QLabel>
 #include <QCalendarWidget>
+#include <QTimer>
 
+using namespace std;
 
-class MainWindow : public QWidget{
+namespace Ui {
+    class MainWindow;
+}
+
+class MainWindow : public QMainWindow{
     Q_OBJECT
     public:
     MainWindow(QWidget * parent=Q_NULLPTR);
-    private:
-    void createDateTime();
+    ~MainWindow();
+    private slots:
+    void on_pushButton_clicked();
 
-    QGroupBox *dtGroupBox;
-    QGridLayout *gridLayout;
-    QCalendarWidget *calendar;
-    QTime *time;
-    QLabel *timeLabel;
+    private:
+    Ui::MainWindow * ui;
+
 };
 
 
